@@ -5,12 +5,12 @@
   - name: Setup nsswitch file
     template: src=nsswitch.conf.j2 dest=/etc/nsswitch.conf
 
-  - name: Nscd daemon configuration file
-    template: src=nscd.conf.j2 dest=/etc/nscd.conf owner=root group=root mode=0644
+  - name: PAM-common-password configuration file
+    template: src=common-password.j2 dest=/etc/pam.d/common-password owner=root group=root mode=0644
     notify:
       - restart nscd
 
-  - name: Nslcd daemon configuration file
-    template: src=nslcd.conf.j2 dest=/etc/nslcd.conf owner=root group=nslcd mode=0640
+  - name: PAM-common-session configuration file
+    template: src=common-session.j2 dest=/etc/pam.d/common-session owner=root group=nslcd mode=0644
     notify:
       - restart nslcd

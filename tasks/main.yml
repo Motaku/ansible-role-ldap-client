@@ -7,7 +7,7 @@
     with_items:
       - "{{ ldap_client_packages }}"
 
-# TODO: Instalation of sudo-ldap on UBUNTU
+# TODO: Instalation of sudo-ldap on Debian
 #  - name: Install sudo-ldap package
 #    apt:  name=sudo-ldap state=present
 #    when: ldap_client_sudo
